@@ -1,5 +1,8 @@
 {
   "images": [
-    { "image": "/images/garden-1.jpg", "alt": "Wedding Garden บรรยากาศ" }
+    {
+      "image": "/images/lo-1.jpg",
+      "alt": "สถานที่จัดงานแต่งในสวนปทุมธานี รังสิต"
+    }
   ]
 }
