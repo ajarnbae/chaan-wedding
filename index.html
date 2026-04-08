@@ -304,6 +304,36 @@ footer{background:#1a1410;color:#fff;padding:48px 5% 28px;text-align:center}
   <p class="f-copy" id="footer-copy">© 2568 Chaan Wedding Venue</p>
 </footer>
 
+<!-- Floating Messenger Button -->
+<a href="https://m.me/chaandecafewedding" target="_blank" id="messenger-btn" title="แชทกับเราผ่าน Messenger">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 2C7.373 2 2 7.03 2 13.233c0 3.368 1.58 6.374 4.072 8.405V25l3.735-2.052A12.8 12.8 0 0014 23.467c6.627 0 12-5.03 12-11.234C26 7.03 20.627 2 14 2z" fill="white"/>
+    <path d="M15.186 16.667l-3.04-3.24-5.946 3.24 6.54-6.934 3.12 3.24 5.866-3.24-6.54 6.934z" fill="#b8956a"/>
+  </svg>
+</a>
+<style>
+#messenger-btn{
+  position:fixed;bottom:28px;right:28px;z-index:9999;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#b8956a,#d4a87a);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(184,149,106,0.5);
+  transition:transform 0.2s,box-shadow 0.2s;
+  text-decoration:none;
+}
+#messenger-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(184,149,106,0.7)}
+#messenger-btn::after{
+  content:'💬 แชทกับเรา';
+  position:absolute;right:64px;
+  background:var(--dark);color:#fff;
+  font-family:'Jost',sans-serif;font-size:12px;
+  padding:6px 12px;border-radius:20px;
+  white-space:nowrap;opacity:0;transition:opacity 0.2s;
+  pointer-events:none;
+}
+#messenger-btn:hover::after{opacity:1}
+</style>
+
 <script>
 // ============================================================
 // Load data from JSON files and render
