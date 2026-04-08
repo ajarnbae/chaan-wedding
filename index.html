@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaan Wedding Venue — สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี</title>
+<meta name="description" content="สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี อาหาร ตกแต่ง สถานที่ พร้อมนายพิธี">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#b8956a;--gold-light:#e8d5b7;--gold-pale:#faf6f0;
+  --cream:#f7f3ed;--dark:#2c2520;--mid:#7a6f65;
+  --font-serif:'Cormorant Garamond',serif;--font-sans:'Jost',sans-serif;
+}
+body{font-family:var(--font-sans);color:var(--dark);background:var(--cream);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,243,237,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--gold-light);padding:0 5%}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-serif);font-size:21px;font-weight:300;letter-spacing:0.06em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:#fff;border:none;padding:10px 22px;font-family:var(--font-sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background 0.2s}
+.nav-cta:hover{background:#a07d58}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px}
+.hero-left{padding:72px 5%;display:flex;flex-direction:column;justify-content:center;max-width:580px;margin-left:auto}
+.hero-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(40px,4.5vw,64px);font-weight:300;line-height:1.1;margin-bottom:20px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:16px;max-width:420px}
+.hero-location{font-size:12px;color:var(--gold);margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:#fff;border:none;padding:14px 30px;font-family:var(--font-sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all 0.2s}
+.btn-primary:hover{background:#a07d58;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:14px 30px;font-family:var(--font-sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all 0.2s}
+.btn-outline:hover{background:var(--gold-pale)}
+.hero-right{overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover}
+.hero-stats{display:flex;gap:36px;margin-top:44px;padding-top:36px;border-top:1px solid var(--gold-light)}
+.stat-num{font-family:var(--font-serif);font-size:34px;font-weight:300}
+.stat-label{font-size:10px;letter-spacing:0.12em;color:var(--mid);text-transform:uppercase;margin-top:4px}
+
+/* SECTION BASE */
+.section{padding:90px 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--gold)}
+.sec-title{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;line-height:1.2;margin-bottom:20px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-text p{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:18px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.feat{background:#fff;border:1px solid var(--gold-light);border-radius:3px;padding:18px}
+.feat-icon{font-size:18px;margin-bottom:8px}
+.feat-title{font-size:13px;font-weight:500;margin-bottom:4px}
+.feat-desc{font-size:12px;color:var(--mid);line-height:1.6}
+.about-img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;gap:10px}
+.about-img-grid img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.about-img-grid img:first-child{grid-row:span 2}
+
+/* GALLERY */
+.gallery-section{background:#fff;padding:90px 5%}
+.gallery-tabs{display:flex;border-bottom:1px solid var(--gold-light);margin:36px 0 28px}
+.gtab{padding:12px 28px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:var(--mid);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;font-family:var(--font-sans)}
+.gtab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.gpane{display:none;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:10px}
+.gpane.active{display:grid}
+.gpane img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.gpane img:first-child{grid-row:span 2}
+.g-ph{background:var(--gold-pale);display:flex;align-items:center;justify-content:center;border-radius:3px;font-family:var(--font-serif);font-style:italic;color:var(--gold);opacity:0.5;font-size:13px}
+
+/* PACKAGES */
+.pkg-section{background:var(--gold-pale);padding:90px 5%}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pkg-card{background:#fff;border:1px solid var(--gold-light);border-radius:3px;padding:36px 28px;position:relative;transition:all 0.3s}
+.pkg-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(184,149,106,0.12)}
+.pkg-card.featured{border-color:var(--gold);border-width:1.5px}
+.pkg-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap;font-family:var(--font-sans)}
+.pkg-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:12px;background:var(--gold-pale);color:var(--gold)}
+.pkg-name{font-family:var(--font-serif);font-size:26px;font-weight:300;margin-bottom:6px}
+.pkg-sub{font-size:11px;color:var(--mid);margin-bottom:20px}
+.pkg-price{font-family:var(--font-serif);font-size:36px;font-weight:300}
+.pkg-price-old{font-size:13px;color:var(--mid);text-decoration:line-through;margin-left:8px}
+.pkg-guests{font-size:11px;color:var(--mid);margin:12px 0 22px;padding-bottom:22px;border-bottom:1px solid var(--gold-light);line-height:1.6}
+.pkg-items{list-style:none;margin-bottom:28px}
+.pkg-items li{font-size:12px;color:var(--mid);padding:5px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.pkg-items li::before{content:'';display:block;width:14px;height:1px;background:var(--gold);flex-shrink:0;margin-top:7px}
+.pkg-btn{width:100%;padding:13px;border-radius:2px;font-family:var(--font-sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.pkg-btn-gold{background:var(--gold);color:#fff;border:none}
+.pkg-btn-gold:hover{background:#a07d58}
+.pkg-btn-ol{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.pkg-btn-ol:hover{background:var(--gold-pale)}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.review-card{background:#fff;border:1px solid var(--gold-light);border-radius:3px;padding:28px}
+.stars{color:var(--gold);font-size:13px;margin-bottom:14px}
+.review-text{font-family:var(--font-serif);font-size:15px;font-style:italic;line-height:1.8;color:var(--dark);margin-bottom:18px}
+.review-author{display:flex;align-items:center;gap:10px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:12px;color:var(--gold);border:1px solid var(--gold-light);flex-shrink:0}
+.r-name{font-size:12px;font-weight:500}
+.r-date{font-size:11px;color:var(--mid)}
+
+/* CONTACT */
+.contact-section{background:var(--dark);color:#fff;padding:90px 5%}
+.contact-section .eyebrow{color:var(--gold)}
+.contact-section .eyebrow::before{background:var(--gold)}
+.contact-section .sec-title{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:44px}
+.contact-info p{font-size:13px;line-height:1.9;color:rgba(255,255,255,0.55);margin-bottom:28px}
+.c-item{display:flex;gap:14px;margin-bottom:18px}
+.c-icon{width:34px;height:34px;border:1px solid rgba(184,149,106,0.35);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.c-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.c-val{font-size:13px;color:rgba(255,255,255,0.8)}
+.c-val a{color:rgba(255,255,255,0.8);text-decoration:none}
+.c-val a:hover{color:var(--gold)}
+.contact-form{background:rgba(255,255,255,0.04);border:1px solid rgba(184,149,106,0.2);border-radius:3px;padding:36px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.f-group{margin-bottom:14px}
+.f-group label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:7px}
+.f-group input,.f-group select,.f-group textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(184,149,106,0.2);border-radius:2px;padding:11px 14px;font-family:var(--font-sans);font-size:13px;color:#fff;outline:none;transition:border 0.2s}
+.f-group input::placeholder,.f-group textarea::placeholder{color:rgba(255,255,255,0.25)}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--gold)}
+.f-group select option{color:var(--dark);background:#fff}
+.f-group textarea{height:90px;resize:vertical}
+.f-submit{width:100%;background:var(--gold);color:#fff;border:none;padding:15px;font-family:var(--font-sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;margin-top:6px;transition:background 0.2s}
+.f-submit:hover{background:#a07d58}
+.f-success{display:none;background:rgba(120,180,120,0.15);border:1px solid rgba(120,180,120,0.3);border-radius:2px;padding:16px;text-align:center;color:#8fd48f;font-size:13px;margin-top:12px}
+
+/* FOOTER */
+footer{background:#1a1410;color:#fff;padding:48px 5% 28px;text-align:center}
+.f-logo{font-family:var(--font-serif);font-size:26px;font-weight:300;letter-spacing:0.1em;margin-bottom:10px}
+.f-logo span{color:var(--gold)}
+.f-tagline{font-family:var(--font-serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.35);margin-bottom:28px}
+.f-nav{display:flex;justify-content:center;gap:28px;margin-bottom:28px;list-style:none}
+.f-nav a{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none}
+.f-nav a:hover{color:var(--gold)}
+.f-hr{border:none;border-top:1px solid rgba(255,255,255,0.07);margin-bottom:20px}
+.f-copy{font-size:10px;color:rgba(255,255,255,0.2)}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-right{min-height:280px}
+  .pkg-grid,.reviews-grid,.feat-grid{grid-template-columns:1fr}
+  .about-img-grid{grid-template-rows:180px 180px}
+  .gpane{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gpane img:first-child{grid-row:auto}
+  .f-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" id="nav-logo">Chaan <span>Wedding Venue</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">เกี่ยวกับเรา</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#packages">แพ็คเกจ</a></li>
+      <li><a href="#reviews">รีวิว</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">จองวันนี้</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow" id="hero-eyebrow">Chaan Wedding Venue</div>
+    <h1 class="hero-title" id="hero-title">Loading...</h1>
+    <p class="hero-sub" id="hero-sub"></p>
+    <div class="hero-location" id="hero-location"></div>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">จองสถานที่</button>
+      <button class="btn-outline" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">ดูแพ็คเกจ</button>
+    </div>
+    <div class="hero-stats" id="hero-stats"></div>
+  </div>
+  <div class="hero-right">
+    <img id="hero-img" src="" alt="Chaan Wedding Venue">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <div class="eyebrow">เกี่ยวกับเรา</div>
+        <h2 class="sec-title">สถาปัตยกรรมคลาสสิก<br>ใจกลางเมืองรังสิต</h2>
+        <p>Chaan Wedding Venue ตั้งอยู่ที่รังสิต ปทุมธานี — อาคารสไตล์ยุโรปโบราณ ผสมผสานความอลังการของ French Colonial กับความอบอุ่นแบบ Classic Wedding สถานที่ที่ทำให้ทุกมุมกล้องสวยงาม</p>
+        <p>ครบวงจรตั้งแต่ต้นจนจบ ทั้งอาหาร ดอกไม้ ตกแต่งเวที ทีมรันคิว และนายพิธี ไม่ต้องประสาน vendor หลายเจ้า เพียงจองวันเดียว เราดูแลให้ทุกอย่าง</p>
+        <div class="feat-grid">
+          <div class="feat"><div class="feat-icon">🏛️</div><div class="feat-title">Classic Architecture</div><div class="feat-desc">อาคารสไตล์ยุโรปคลาสสิก มุมถ่ายรูปสวยทุกซอก</div></div>
+          <div class="feat"><div class="feat-icon">🌿</div><div class="feat-title">Indoor & Outdoor</div><div class="feat-desc">พื้นที่ทั้งในและนอกอาคาร หลายสไตล์ รองรับทุกรูปแบบ</div></div>
+          <div class="feat"><div class="feat-icon">🍽️</div><div class="feat-title">Organize & Catering ครบ</div><div class="feat-desc">ทีมอาหาร ทีมตกแต่ง ทีมรันคิว ครบจบที่เดียว</div></div>
+          <div class="feat"><div class="feat-icon">📋</div><div class="feat-title">Book & Ready to Go</div><div class="feat-desc">เพียงแค่จองวัน ก็พร้อมแต่งได้เลย ไม่ต้องกังวล</div></div>
+        </div>
+      </div>
+      <div class="about-img-grid fade-up" id="about-imgs">
+        <img src="" alt="Wedding stage">
+        <img src="" alt="Wedding ceremony">
+        <img src="" alt="Venue exterior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <div class="eyebrow">Gallery</div>
+    <h2 class="sec-title fade-up">3 โซนจัดงาน เลือกได้ตามสไตล์</h2>
+    <div class="gallery-tabs">
+      <button class="gtab active" onclick="switchTab('hall',this)">Wedding Hall</button>
+      <button class="gtab" onclick="switchTab('garden',this)">Wedding Garden</button>
+      <button class="gtab" onclick="switchTab('waterfall',this)">Wedding Waterfall</button>
+    </div>
+    <div class="gpane active" id="gpane-hall"></div>
+    <div class="gpane" id="gpane-garden"></div>
+    <div class="gpane" id="gpane-waterfall"></div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="pkg-section" id="packages">
+  <div class="section-inner">
+    <div class="eyebrow">แพ็คเกจและราคา</div>
+    <h2 class="sec-title fade-up">เลือกแพ็คเกจที่ใช่สำหรับคุณ</h2>
+    <div class="pkg-grid" id="pkg-grid"></div>
+    <p style="text-align:center;margin-top:24px;font-size:12px;color:var(--mid)">* ราคาสำหรับแขก 100 ท่าน | สอบถามเพิ่มเติม <span id="footer-phone"></span></p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="eyebrow">รีวิวจากลูกค้า</div>
+    <h2 class="sec-title fade-up">เสียงจากคู่รักที่ไว้วางใจเรา</h2>
+    <div class="reviews-grid" id="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="eyebrow">ติดต่อและจอง</div>
+    <h2 class="sec-title fade-up">เริ่มต้นวางแผนวันพิเศษ</h2>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p>ยินดีต้อนรับทุกคู่รักให้มาเยี่ยมชมสถานที่จริง ทีมงานพร้อมให้คำปรึกษาและวางแผนงานแต่งงานให้คุณอย่างครบวงจร</p>
+        <div id="contact-details"></div>
+      </div>
+      <div class="contact-form fade-up">
+        <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="booking-form">
+          <input type="hidden" name="form-name" value="booking">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="f-row">
+            <div class="f-group"><label>ชื่อเจ้าบ่าว</label><input type="text" name="groom" placeholder="ชื่อ-นามสกุล" required></div>
+            <div class="f-group"><label>ชื่อเจ้าสาว</label><input type="text" name="bride" placeholder="ชื่อ-นามสกุล" required></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label>เบอร์โทรศัพท์</label><input type="tel" name="phone" placeholder="08x-xxx-xxxx" required></div>
+            <div class="f-group"><label>วันที่ต้องการ</label><input type="date" name="date" required></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label>โซนที่สนใจ</label>
+              <select name="zone"><option>Wedding Hall</option><option>Wedding Garden</option><option>Wedding Waterfall</option><option>ยังไม่แน่ใจ</option></select>
+            </div>
+            <div class="f-group"><label>จำนวนแขก</label>
+              <select name="guests"><option>น้อยกว่า 100 คน</option><option>100–200 คน</option><option>200–300 คน</option><option>300 คนขึ้นไป</option></select>
+            </div>
+          </div>
+          <div class="f-group" id="pkg-select-wrap"><label>แพ็คเกจที่สนใจ</label>
+            <select name="package" id="pkg-select"></select>
+          </div>
+          <div class="f-group"><label>ข้อความเพิ่มเติม</label><textarea name="message" placeholder="บอกเล่าความฝันของงานแต่งงานในแบบที่คุณต้องการ..."></textarea></div>
+          <button type="submit" class="f-submit">ส่งคำขอจอง</button>
+          <div class="f-success" id="f-success">✓ ส่งคำขอเรียบร้อยแล้ว! ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงค่ะ</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo" id="footer-logo">Chaan <span>Wedding Venue</span></div>
+  <div class="f-tagline">สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี</div>
+  <ul class="f-nav">
+    <li><a href="#about">เกี่ยวกับเรา</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#packages">แพ็คเกจ</a></li>
+    <li><a href="#reviews">รีวิว</a></li>
+    <li><a href="#contact">ติดต่อ</a></li>
+  </ul>
+  <hr class="f-hr">
+  <p class="f-copy" id="footer-copy">© 2568 Chaan Wedding Venue</p>
+</footer>
+
+<script>
+// ============================================================
+// Load data from JSON files and render
+// ============================================================
+async function loadJSON(path) {
+  const r = await fetch(path + '?v=' + Date.now());
+  return r.json();
+}
+
+async function init() {
+  const [settings, hero, pkgs, reviews, gHall, gGarden, gWaterfall] = await Promise.all([
+    loadJSON('/_data/settings.json'),
+    loadJSON('/_data/hero.json'),
+    loadJSON('/_data/packages.json'),
+    loadJSON('/_data/reviews.json'),
+    loadJSON('/_data/gallery-hall.json'),
+    loadJSON('/_data/gallery-garden.json'),
+    loadJSON('/_data/gallery-waterfall.json'),
+  ]);
+
+  renderSettings(settings);
+  renderHero(hero, settings);
+  renderGallery('hall', gHall.images);
+  renderGallery('garden', gGarden.images);
+  renderGallery('waterfall', gWaterfall.images);
+  renderPackages(pkgs.items, settings);
+  renderReviews(reviews.items);
+  renderContact(settings);
+}
+
+function renderSettings(s) {
+  document.title = s.venue_name + ' — สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี';
+  document.getElementById('footer-logo').innerHTML = s.venue_name.replace('Wedding', '<span>Wedding') + '</span>';
+  document.getElementById('footer-copy').textContent = '© 2568 ' + s.venue_name;
+  document.getElementById('footer-phone').textContent = 'โทร ' + s.phone;
+}
+
+function renderHero(h, s) {
+  document.getElementById('hero-title').innerHTML =
+    h.title1 + '<br>' + h.title2 + '<br><em>' + h.title3 + '</em>';
+  document.getElementById('hero-sub').textContent = h.subtitle;
+  document.getElementById('hero-location').innerHTML = '📍 ' + h.title3 + ' &nbsp;|&nbsp; 📞 ' + s.phone;
+  document.getElementById('hero-img').src = h.hero_image;
+  document.getElementById('hero-img').alt = s.venue_name;
+  const statsEl = document.getElementById('hero-stats');
+  statsEl.innerHTML = h.stats.map(s =>
+    `<div><div class="stat-num">${s.number}</div><div class="stat-label">${s.label}</div></div>`
+  ).join('');
+
+  // About images: use first 3 gallery-hall images as fallback
+  const aboutImgs = document.querySelectorAll('#about-imgs img');
+  const fallbacks = [
+    h.hero_image,
+    h.hero_image,
+    h.hero_image
+  ];
+  fallbacks.forEach((src, i) => {
+    if (aboutImgs[i]) aboutImgs[i].src = src;
+  });
+}
+
+function renderGallery(zone, images) {
+  const el = document.getElementById('gpane-' + zone);
+  if (!images || images.length === 0) {
+    el.innerHTML = '<div class="g-ph" style="grid-column:span 3;grid-row:span 2">ยังไม่มีรูปภาพ — เพิ่มได้ที่หน้า Admin</div>';
+    return;
+  }
+  el.innerHTML = images.slice(0, 5).map((img, i) =>
+    `<img src="${img.image}" alt="${img.alt}" ${i===0?'style="grid-row:span 2"':''}>`
+  ).join('') + (images.length < 5 ? Array(5-images.length).fill('<div class="g-ph">+</div>').join('') : '');
+}
+
+function renderPackages(items, settings) {
+  const grid = document.getElementById('pkg-grid');
+  const sel = document.getElementById('pkg-select');
+  sel.innerHTML = '';
+  grid.innerHTML = items.map(p => `
+    <div class="pkg-card${p.featured ? ' featured' : ''}">
+      ${p.featured ? '<div class="pkg-badge">ลดพิเศษ</div>' : ''}
+      <div class="pkg-tag">${p.tag}</div>
+      <div class="pkg-name">${p.name}</div>
+      <div class="pkg-sub">${p.subtitle}</div>
+      <div class="pkg-price">${p.price}${p.price_old ? ` <span class="pkg-price-old">${p.price_old}</span>` : ''}</div>
+      <div class="pkg-guests">${p.guests_detail}</div>
+      <ul class="pkg-items">${p.includes.map(i => `<li>${i}</li>`).join('')}</ul>
+      <button class="pkg-btn ${p.featured ? 'pkg-btn-gold' : 'pkg-btn-ol'}" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        ${p.featured ? 'จองโปรนี้เลย' : 'สอบถามเพิ่มเติม'}
+      </button>
+    </div>
+  `).join('');
+
+  items.forEach(p => {
+    const opt = document.createElement('option');
+    opt.textContent = p.name + ' — ' + p.price;
+    sel.appendChild(opt);
+  });
+  const opt2 = document.createElement('option');
+  opt2.textContent = 'ยังไม่แน่ใจ / สอบถามก่อน';
+  sel.appendChild(opt2);
+}
+
+function renderReviews(items) {
+  document.getElementById('reviews-grid').innerHTML = items.map(r => {
+    const initials = r.name.split('&').map(n => n.trim()[0]).join(' ');
+    return `
+      <div class="review-card fade-up">
+        <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+        <p class="review-text">"${r.text}"</p>
+        <div class="review-author">
+          <div class="avatar">${initials}</div>
+          <div><div class="r-name">${r.name}</div><div class="r-date">${r.date}</div></div>
+        </div>
+      </div>`;
+  }).join('');
+  document.querySelectorAll('.review-card').forEach(el => obs.observe(el));
+}
+
+function renderContact(s) {
+  document.getElementById('contact-details').innerHTML = `
+    <div class="c-item"><div class="c-icon">📍</div><div><span class="c-label">ที่ตั้ง</span><span class="c-val"><a href="${s.maps_url}" target="_blank">ดูแผนที่ Google Maps</a></span></div></div>
+    <div class="c-item"><div class="c-icon">📞</div><div><span class="c-label">โทรศัพท์</span><span class="c-val"><a href="tel:${s.phone.replace(/-/g,'')}">${s.phone} (พริม)</a></span></div></div>
+    <div class="c-item"><div class="c-icon">💬</div><div><span class="c-label">Facebook</span><span class="c-val"><a href="${s.facebook_url}" target="_blank">Chaan De Cafe Wedding</a></span></div></div>
+    <div class="c-item"><div class="c-icon">🕐</div><div><span class="c-label">เวลาทำการ</span><span class="c-val">${s.hours}<br><span style="font-size:11px;opacity:0.5">${s.hours_note}</span></span></div></div>
+  `;
+}
+
+// Tab switching
+function switchTab(id, el) {
+  document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.gpane').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('gpane-' + id).classList.add('active');
+}
+
+// Form submit
+document.getElementById('booking-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    await fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() });
+    document.getElementById('f-success').style.display = 'block';
+    form.reset();
+  } catch(err) {
+    alert('เกิดข้อผิดพลาด กรุณาลองใหม่หรือโทรติดต่อโดยตรงค่ะ');
+  }
+});
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Init
+init().catch(console.error);
+</script>
+</body>
+</html>

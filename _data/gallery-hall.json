@@ -1,0 +1,8 @@
+{
+  "images": [
+    { "image": "/images/hall-1.jpg", "alt": "Wedding Hall บรรยากาศงาน" },
+    { "image": "/images/hall-2.jpg", "alt": "เวทีตกแต่งดอกไม้" },
+    { "image": "/images/hall-3.jpg", "alt": "พิธีในโถง Hall" },
+    { "image": "/images/hall-4.jpg", "alt": "สถาปัตยกรรมภายนอก" }
+  ]
+}

@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: th
+
+collections:
+  # ==================== ข้อมูลหลักเว็บไซต์ ====================
+  - name: "settings"
+    label: "⚙️ ตั้งค่าเว็บไซต์"
+    files:
+      - name: "general"
+        label: "ข้อมูลทั่วไป"
+        file: "_data/settings.json"
+        fields:
+          - { label: "ชื่อ Venue", name: "venue_name", widget: "string", default: "Chaan Wedding Venue" }
+          - { label: "คำอธิบายสั้น (สำหรับ SEO)", name: "description", widget: "text" }
+          - { label: "เบอร์โทรศัพท์", name: "phone", widget: "string", default: "090-888-2363" }
+          - { label: "Link Google Maps", name: "maps_url", widget: "string" }
+          - { label: "Link Facebook", name: "facebook_url", widget: "string" }
+          - { label: "เวลาทำการ", name: "hours", widget: "string", default: "เปิดทุกวัน 10:00–20:00 น." }
+          - { label: "หมายเหตุเวลา", name: "hours_note", widget: "string", default: "จัดงานได้ถึงเที่ยงคืน" }
+
+  # ==================== Hero Section ====================
+  - name: "hero"
+    label: "🏠 หน้าแรก (Hero)"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "_data/hero.json"
+        fields:
+          - { label: "หัวข้อหลัก บรรทัด 1", name: "title1", widget: "string", default: "สถานที่แต่งงาน" }
+          - { label: "หัวข้อหลัก บรรทัด 2", name: "title2", widget: "string", default: "ครบวงจร" }
+          - { label: "หัวข้อหลัก บรรทัด 3 (เน้นสี)", name: "title3", widget: "string", default: "รังสิต ปทุมธานี" }
+          - { label: "คำอธิบาย", name: "subtitle", widget: "text" }
+          - { label: "รูปภาพ Hero", name: "hero_image", widget: "image" }
+          - label: "Stats 3 ตัวเลข"
+            name: "stats"
+            widget: "list"
+            max: 3
+            fields:
+              - { label: "ตัวเลข", name: "number", widget: "string" }
+              - { label: "คำอธิบาย", name: "label", widget: "string" }
+
+  # ==================== Gallery ====================
+  - name: "gallery"
+    label: "🖼️ รูป Gallery"
+    files:
+      - name: "hall"
+        label: "Wedding Hall"
+        file: "_data/gallery-hall.json"
+        fields:
+          - label: "รูปภาพ (สูงสุด 10 รูป)"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "รูปภาพ", name: "image", widget: "image" }
+              - { label: "คำอธิบายรูป (Alt text)", name: "alt", widget: "string" }
+      - name: "garden"
+        label: "Wedding Garden"
+        file: "_data/gallery-garden.json"
+        fields:
+          - label: "รูปภาพ (สูงสุด 10 รูป)"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "รูปภาพ", name: "image", widget: "image" }
+              - { label: "คำอธิบายรูป (Alt text)", name: "alt", widget: "string" }
+      - name: "waterfall"
+        label: "Wedding Waterfall"
+        file: "_data/gallery-waterfall.json"
+        fields:
+          - label: "รูปภาพ (สูงสุด 10 รูป)"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "รูปภาพ", name: "image", widget: "image" }
+              - { label: "คำอธิบายรูป (Alt text)", name: "alt", widget: "string" }
+
+  # ==================== Packages ====================
+  - name: "packages"
+    label: "📦 แพ็คเกจและราคา"
+    files:
+      - name: "packages"
+        label: "แพ็คเกจทั้งหมด"
+        file: "_data/packages.json"
+        fields:
+          - label: "แพ็คเกจ"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ชื่อแพ็คเกจ (เช่น Early Bird)", name: "name", widget: "string" }
+              - { label: "คำอธิบายสั้น", name: "subtitle", widget: "string" }
+              - { label: "Tag (เช่น จองข้ามปี / พ.ค.–ก.ค. เท่านั้น)", name: "tag", widget: "string" }
+              - { label: "ราคา (เช่น ฿140,000)", name: "price", widget: "string" }
+              - { label: "ราคาเดิม (ถ้ามีลด)", name: "price_old", widget: "string", required: false }
+              - { label: "รายละเอียดเวลา/จำนวนแขก", name: "guests_detail", widget: "string" }
+              - { label: "แพ็คเกจแนะนำ (ขอบเน้น)?", name: "featured", widget: "boolean", default: false }
+              - label: "รายละเอียดที่รวม"
+                name: "includes"
+                widget: "list"
+                field: { label: "รายการ", name: "item", widget: "string" }
+
+  # ==================== Reviews ====================
+  - name: "reviews"
+    label: "⭐ รีวิวลูกค้า"
+    files:
+      - name: "reviews"
+        label: "รีวิวทั้งหมด"
+        file: "_data/reviews.json"
+        fields:
+          - label: "รีวิว"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ชื่อคู่บ่าวสาว", name: "name", widget: "string" }
+              - { label: "เดือน/ปีที่จัดงาน", name: "date", widget: "string" }
+              - { label: "รีวิว", name: "text", widget: "text" }
+              - { label: "ดาว (1–5)", name: "stars", widget: "number", default: 5, value_type: "int", min: 1, max: 5 }
