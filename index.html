@@ -5,14 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chaan Wedding Venue — สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี</title>
 <meta name="description" content="สถานที่แต่งงานครบวงจร รังสิต ปทุมธานี อาหาร ตกแต่ง สถานที่ พร้อมนายพิธี">
-<script>
-if (window.location.hash && window.location.hash.includes('invite_token')) {
-  window.location = window.location.href.replace('/#invite_token', '/admin/#invite_token');
-}
-if (window.location.hash && window.location.hash.includes('recovery_token')) {
-  window.location = window.location.href.replace('/#recovery_token', '/admin/#recovery_token');
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -207,15 +199,10 @@ footer{background:#1a1410;color:#fff;padding:48px 5% 28px;text-align:center}
     <div class="about-grid">
       <div class="about-text fade-up">
         <div class="eyebrow">เกี่ยวกับเรา</div>
-        <h2 class="sec-title">สถาปัตยกรรมคลาสสิก<br>ใจกลางเมืองรังสิต</h2>
-        <p>Chaan Wedding Venue ตั้งอยู่ที่รังสิต ปทุมธานี — อาคารสไตล์ยุโรปโบราณ ผสมผสานความอลังการของ French Colonial กับความอบอุ่นแบบ Classic Wedding สถานที่ที่ทำให้ทุกมุมกล้องสวยงาม</p>
-        <p>ครบวงจรตั้งแต่ต้นจนจบ ทั้งอาหาร ดอกไม้ ตกแต่งเวที ทีมรันคิว และนายพิธี ไม่ต้องประสาน vendor หลายเจ้า เพียงจองวันเดียว เราดูแลให้ทุกอย่าง</p>
-        <div class="feat-grid">
-          <div class="feat"><div class="feat-icon">🏛️</div><div class="feat-title">Classic Architecture</div><div class="feat-desc">อาคารสไตล์ยุโรปคลาสสิก มุมถ่ายรูปสวยทุกซอก</div></div>
-          <div class="feat"><div class="feat-icon">🌿</div><div class="feat-title">Indoor & Outdoor</div><div class="feat-desc">พื้นที่ทั้งในและนอกอาคาร หลายสไตล์ รองรับทุกรูปแบบ</div></div>
-          <div class="feat"><div class="feat-icon">🍽️</div><div class="feat-title">Organize & Catering ครบ</div><div class="feat-desc">ทีมอาหาร ทีมตกแต่ง ทีมรันคิว ครบจบที่เดียว</div></div>
-          <div class="feat"><div class="feat-icon">📋</div><div class="feat-title">Book & Ready to Go</div><div class="feat-desc">เพียงแค่จองวัน ก็พร้อมแต่งได้เลย ไม่ต้องกังวล</div></div>
-        </div>
+        <h2 class="sec-title" id="about-title">สถาปัตยกรรมคลาสสิก<br>ใจกลางเมืองรังสิต</h2>
+        <p id="about-desc1"></p>
+        <p id="about-desc2"></p>
+        <div class="feat-grid" id="about-features"></div>
       </div>
       <div class="about-img-grid fade-up" id="about-imgs">
         <img src="" alt="Wedding stage">
@@ -327,9 +314,10 @@ async function loadJSON(path) {
 }
 
 async function init() {
-  const [settings, hero, pkgs, reviews, gHall, gGarden, gWaterfall] = await Promise.all([
+  const [settings, hero, about, pkgs, reviews, gHall, gGarden, gWaterfall] = await Promise.all([
     loadJSON('/_data/settings.json'),
     loadJSON('/_data/hero.json'),
+    loadJSON('/_data/about.json'),
     loadJSON('/_data/packages.json'),
     loadJSON('/_data/reviews.json'),
     loadJSON('/_data/gallery-hall.json'),
@@ -339,6 +327,7 @@ async function init() {
 
   renderSettings(settings);
   renderHero(hero, settings);
+  renderAbout(about);
   renderGallery('hall', gHall.images);
   renderGallery('garden', gGarden.images);
   renderGallery('waterfall', gWaterfall.images);
@@ -365,16 +354,26 @@ function renderHero(h, s) {
   statsEl.innerHTML = h.stats.map(s =>
     `<div><div class="stat-num">${s.number}</div><div class="stat-label">${s.label}</div></div>`
   ).join('');
+}
 
-  // About images: use first 3 gallery-hall images as fallback
-  const aboutImgs = document.querySelectorAll('#about-imgs img');
-  const fallbacks = [
-    h.hero_image,
-    h.hero_image,
-    h.hero_image
-  ];
-  fallbacks.forEach((src, i) => {
-    if (aboutImgs[i]) aboutImgs[i].src = src;
+function renderAbout(a) {
+  // Title
+  document.getElementById('about-title').innerHTML = a.title1 + '<br>' + a.title2;
+  // Descriptions
+  document.getElementById('about-desc1').textContent = a.description1;
+  document.getElementById('about-desc2').textContent = a.description2;
+  // Features
+  document.getElementById('about-features').innerHTML = a.features.map(f => `
+    <div class="feat">
+      <div class="feat-icon">${f.icon}</div>
+      <div class="feat-title">${f.title}</div>
+      <div class="feat-desc">${f.desc}</div>
+    </div>
+  `).join('');
+  // Images
+  const imgs = document.querySelectorAll('#about-imgs img');
+  a.images.forEach((img, i) => {
+    if (imgs[i]) { imgs[i].src = img.image; imgs[i].alt = img.alt; }
   });
 }
 
